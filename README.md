@@ -1,2 +1,2 @@
 # AI-app_TradeBot
-lmao
+Ứng dụng AI mô phỏng và hỗ trợ quyết định đầu tư crypto
