@@ -1,0 +1,34 @@
+name: CI/CD Pipeline
+
+# Khi nào chạy pipeline
+on: [push, pull_request]
+
+# Các công việc (jobs) cần thực hiện
+jobs:
+  build:
+    # Chạy trên máy ảo Ubuntu mới nhất
+    runs-on: ubuntu-latest
+    steps:
+      # Bước 1: Lấy code từ repo
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Bước 2: Cài đặt Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'  # Phiên bản Python tương thích với Dockerfile
+
+      # Bước 3: Cài đặt dependencies
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Bước 4: Chạy test (chưa có test, chỉ placeholder)
+      - name: Run tests
+        run: pytest  # Thêm test sau
+
+      # Bước 5: Build Docker image
+      - name: Build Docker image
+        run: docker build -t cryptoai-tradebot .
+
+      # Bước 6: Deploy lên cloud hoặc server? (later)
