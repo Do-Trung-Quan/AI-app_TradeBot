@@ -1,0 +1,3 @@
+requests  # Để kết nối API như Binance
+pandas    # Để xử lý dữ liệu
+ccxt      # Thư viện chuyên cho sàn crypto (hỗ trợ Binance, Coinbase)
