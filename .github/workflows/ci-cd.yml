@@ -30,5 +30,3 @@ jobs:
       # Bước 5: Build Docker image
       - name: Build Docker image
         run: docker build -t cryptoai-tradebot .
-
-      # Bước 6: Deploy lên cloud hoặc server? (later)
